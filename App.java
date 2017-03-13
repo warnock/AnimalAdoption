@@ -1,5 +1,8 @@
+import java.io.Console;
+
 public class App{
   public static void main(String[] args){
+    Console console = System.console();
     Animal spot = new Animal();
     spot.name = "Spot";
     spot.species = "dog";
@@ -21,17 +24,22 @@ public class App{
     snappy.color = "green";
     snappy.temperament = "bitey";
 
+    System.out.println("What temperament are you looking for?");
+    String matchInput = console.readLine();
+
     Animal[] allAnimals = {spot, boots, snappy};
     System.out.println("Welcome to Animal Adoptions!");
     System.out.println("Here are our friendly animals:");
     for(Animal indAnimal : allAnimals){
-      if(indAnimal.petMatch("friendly")){
+      if(indAnimal.petMatch(matchInput)){
         System.out.println("------------------");
         System.out.println("Name: " + indAnimal.name);
         System.out.println("Species: " + indAnimal.species);
         System.out.println("Age: " + indAnimal.age);
         System.out.println("Color: " + indAnimal.color);
         System.out.println("Temperament: " + indAnimal.temperament);
+      } else {
+        System.out.println("There are no animals in this temperament.");
       }
     }
   }

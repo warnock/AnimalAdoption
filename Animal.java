@@ -6,7 +6,7 @@ class Animal{
   public String temperament;
 
   public boolean petMatch(String match){
-    if(this.temperament == "friendly"){
+    if(this.temperament.equals(match)){
       return true;
     } else{
       return false;
