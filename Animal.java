@@ -5,11 +5,21 @@ class Animal{
   public String color;
   public String temperament;
 
-  public boolean petMatch(String match){
-    if(this.temperament.equals(match)){
+
+  public Animal(String name, String species, int age, String color, String temperament) {
+    this.name = name;
+    this.species = species;
+    this.age = age;
+    this.color = color;
+    this.temperament = temperament;
+  }
+
+  public boolean insidePet(){
+    if(this.species.equals("dog")) {
       return true;
-    } else{
+    } else {
       return false;
     }
   }
+
 }
